@@ -123,11 +123,11 @@ def get_image(image_path: str,
     return img
     
 if __name__ == "__main__":
-    start_time = time.time()
     train_loader = create_dataloader('/usr/src/app/da2so/datasets/VOC/images', 
                                     bs=32, 
                                     prefix='train', 
                                     workers=8)
+    start_time = time.time()
     for image, label in train_loader:
         print(f'image shape: {image.shape}')
         print(f'label shape: {label.shape}')

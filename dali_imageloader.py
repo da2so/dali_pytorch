@@ -47,13 +47,12 @@ class DALIImageLoader():
         return self.dali_iterator.__iter__()
 
 if __name__ == "__main__":
-    start_time = time.time()
     daliloader = DALIImageLoader(path='/usr/src/app/da2so/datasets/VOC/images',
                                  batch_size=32,
                                  num_threads=8)
+    start_time = time.time()
     for idx, inp in enumerate(daliloader):
         print(f'image shape: {inp[0]["data"].shape}')
         print(f'label shape: {inp[0]["label"].shape}')
-    print(idx)
     print(f'[DALI Imageloader] time: {time.time() - start_time}')
 

@@ -129,12 +129,12 @@ def get_video(video_path: str,
     return video
     
 if __name__ == "__main__":
-    start_time = time.time()
     train_loader  = create_dataloader("./videos", 
                                     bs=8, 
                                     prefix='train', 
                                     workers=8, 
                                     interval=5)
+    start_time = time.time()
     for video, label in train_loader:
         print(f'video shape: {video.shape}')
         print(f'label shape: {label.shape}')
